@@ -1,12 +1,19 @@
 {
-  "name": "gemstone-app",
+  "name": "lumina-gemstone-app",
   "version": "1.0.0",
+  "description": "A Full-Stack MERN Gemstone Recommendation Application with Gemini AI",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install-all": "npm install --prefix server && npm install --prefix client",
+    "start": "npm run dev",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "seed": "node server/data/seed.js"
   },
-  "keywords": [],
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
   "author": "",
-  "license": "ISC",
-  "description": ""
+  "license": "ISC"
 }
